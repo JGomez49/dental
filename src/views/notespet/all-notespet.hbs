@@ -1,0 +1,55 @@
+{{! <h1>All Notes Pet</h1> }}
+
+{{!-- <pre>{{notesPet}}</pre> --}}
+
+<div class="row">
+
+    {{#each notesPet}}
+
+        {{#if phone}}
+
+            <div class="col-md-3 p-2">
+
+                <div class="card border-primary h-100">
+
+                    <div class="card-body">
+                        <h4
+                            class="card-title d-flex justify-content-between align-items-center _card border-primary_"
+                            >{{title}}
+                            <a href="/notespet/edit/{{_id}}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </h4>
+                        <img
+                            src="{{path}}"
+                            class="img-fluid rounded-start my-1 card border-primary"
+                            alt="..."
+                            onclick="window.open('{{path}}');"
+                        />
+                    </div>
+
+                    <form
+                        action="/notespet/delete/{{_id}}?_method=delete"
+                        method="post"
+                        style="padding: 5px;"
+                        >
+                        <input type="hidden" name="_method" value="delete" />
+                        <td>
+                            <a
+                                href="/notespet/{{_id}}"
+                                class="btn btn-primary btn-block btn-sm"
+                            >Profile</a>
+                        </td>
+                        <button 
+                            type="submit" class="btn btn-danger btn-block btn-sm">Delete
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+        {{/if}}
+
+    {{/each}}
+
+</div>

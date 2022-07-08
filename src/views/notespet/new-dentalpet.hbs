@@ -1,0 +1,289 @@
+{{!-- <pre>{{notesPet}}</pre> --}}
+
+<div class="container">
+
+  {{!-- <h3>New Dental</h3> --}}
+
+    <div class="row">
+
+            <div class="col">
+
+                <div class="card border-primary">
+
+                    <div class="card-body">
+
+                        <form
+                            action="/notespet/new-notePet"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            >
+
+                            <div class="input-group mb-3">
+                            <input
+                                type="file"
+                                name="image"
+                                class="form-control"
+                                id="inputGroupFile02"
+                            />
+                            </div>
+
+                            <div class="form-group mb-3">
+                            <input
+                                type="text"
+                                name="title"
+                                placeholder="Title"
+                                class="form-control mb-3"
+                            />
+                            </div>
+
+                            <div class="input-group mb-3">
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="precio"
+                                style="background-color: #696969"
+                                name="precio"
+                                value={{notesPet._id}}
+                            />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="Textarea1" class="form-label">Comments</label>
+                                <textarea class="form-control" id="Textarea1" rows="3" name="comments"></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-block mb-2">
+                                <a class="btn btn-primary me-md-2" href="/notespet">Cancel</a>
+                                <button
+                                    class="btn btn-success"
+                                    type="submit"
+                                    id="btnDentalUpload"
+                                    >Upload
+                                </button>
+                            </div>
+
+                            {{!-- De aca para abajo es la forma del examen --}}
+
+                            <div class="card border-primary my-4" style="background-color: white;">
+
+                                <img
+                                    src="https://res.cloudinary.com/metacortexjohn/image/upload/v1656096869/K9-chart-up_left_izc2kr.png"
+                                    class="img-fluid rounded-start _my-1 card_ border-primary_"
+                                    alt="..."
+                                />
+                                <img
+                                    src="https://res.cloudinary.com/metacortexjohn/image/upload/v1656096869/K9-chart-up_right_oatrso.png"
+                                    class="img-fluid rounded-start _my-1 card_ border-primary_"
+                                    alt="..."
+                                />
+
+
+                                <div class="card" id="exam">
+
+                                <table class="table table-responsive table-primary text-center table-sm col-auto">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">110</th>
+                                            <th scope="col">109</th>
+                                            <th scope="col">108</th>
+                                            <th scope="col">107</th>
+                                            <th scope="col">106</th>
+                                            <th scope="col">105</th>
+                                            <th scope="col">104</th>
+                                            <th scope="col">103</th>
+                                            <th scope="col">102</th>
+                                            <th scope="col">101</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-responsive table-primary text-center table-sm col-auto">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">201</th>
+                                            <th scope="col">202</th>
+                                            <th scope="col">203</th>
+                                            <th scope="col">204</th>
+                                            <th scope="col">205</th>
+                                            <th scope="col">206</th>
+                                            <th scope="col">207</th>
+                                            <th scope="col">208</th>
+                                            <th scope="col">209</th>
+                                            <th scope="col">210</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-responsive table-primary text-center table-sm col-auto">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">301</th>
+                                            <th scope="col">302</th>
+                                            <th scope="col">303</th>
+                                            <th scope="col">304</th>
+                                            <th scope="col">305</th>
+                                            <th scope="col">306</th>
+                                            <th scope="col">307</th>
+                                            <th scope="col">308</th>
+                                            <th scope="col">309</th>
+                                            <th scope="col">310</th>
+                                            <th scope="col">311</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                
+                                <table class="table table-responsive table-primary text-center table-sm col-auto">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">411</th>
+                                            <th scope="col">410</th>
+                                            <th scope="col">409</th>
+                                            <th scope="col">408</th>
+                                            <th scope="col">407</th>
+                                            <th scope="col">406</th>
+                                            <th scope="col">405</th>
+                                            <th scope="col">404</th>
+                                            <th scope="col">403</th>
+                                            <th scope="col">402</th>
+                                            <th scope="col">401</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                            <td><input class="form-control" type="text" aria-label="default input example" style="width: 70px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+
+                                </div>
+
+
+
+                                <img
+                                    src="https://res.cloudinary.com/metacortexjohn/image/upload/v1656096869/K9-chart-down_right_bpiah9.png"
+                                    class="img-fluid rounded-start _my-1 card_ border-primary_"
+                                    alt="..."
+                                />
+                                <img
+                                    src="https://res.cloudinary.com/metacortexjohn/image/upload/v1656096869/K9-chart-down_left_rrsla1.png"
+                                    class="img-fluid rounded-start _my-1 card_ border-primary_"
+                                    alt="..."
+                                />                               
+
+
+                                <div class="card">
+                                    <h5 class="card-header">Abbreviations</h5>
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row align-items-start">
+                                                <div class="col">
+                                                    <p class="card-text">BE: Biopsy, excisional.</p>
+                                                    <p class="card-text">BI: Biopsy, incisional.</p>
+                                                    <p class="card-text">CA: Caries.</p>
+                                                    <p class="card-text">CI: Calculus index (1, 2, 3).</p>
+                                                    <p class="card-text">CR: Crown restauration.</p>
+                                                    <p class="card-text">FI: Furcation index (1, 2, 3).</p>
+                                                    <p class="card-text">FX: Fractured tooth or jaw.</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="card-text">G: Granuloma.</p>
+                                                    <p class="card-text">GI: Gingival index (1, 2, 3).</p>
+                                                    <p class="card-text">GH: Gingival hyperplasia.</p>
+                                                    <p class="card-text">GR: Gingival resession.</p>
+                                                    <p class="card-text">MI: Mobility index (1, 2, 3).</p>
+                                                    <p class="card-text">OM: Oral mass.</p>
+                                                    <p class="card-text">PC: Pulp capping.</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="card-text">PE: Pulp exposed.</p>
+                                                    <p class="card-text">PI: Plaque index (1, 2, 3).</p>
+                                                    <p class="card-text">PP: Periodontal pocket.</p>
+                                                    <p class="card-text">PRO: Periodontal prophylaxis.</p>
+                                                    <p class="card-text">R/C: Composite filling.</p>
+                                                    <p class="card-text">RD: Retain desiduous.</p>
+                                                    <p class="card-text">RRT: Retain root tip.</p>
+                                                </div>
+                                                <div class="col">
+                                                    <p class="card-text">ST: Stomatitis.</p>
+                                                    <p class="card-text">T/A: Tooth avulsed.</p>
+                                                    <p class="card-text">T/I: Tooth impacted.</p>
+                                                    <p class="card-text">TR: Tooth resorption (1, 2, 3, 4, 5).</p>
+                                                    <p class="card-text">X: Simple closed extraction.</p>
+                                                    <p class="card-text">XS: Nonsurgical extraction with tooth sectioning.</p>
+                                                    <p class="card-text">XSS: Surgical extraction.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="button" class="btn btn-primary mt-3" value="Save dental chart" onclick="capture('{{notesPet.title}} Dental')"/>
+                                        {{!-- Este es diferente. En vez de crear una ruta que pasara por notepet.routes.js, la hize en main.hbs como script, y
+                                        llamo la funcion con un in-li onclick. --}}
+
+                                    </div>
+                                </div>
+
+                            </div>
+                                
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
