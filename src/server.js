@@ -4,6 +4,8 @@
 // 16. Registro de Usuario o SignUp: https://www.youtube.com/watch?v=EpomajNVcMk
 // 17. Login de Usuarios con Passport y bcrypt: https://www.youtube.com/watch?v=NN-Jt6EjFAc
 
+require('dotenv').config()
+
 const express = require('express');
 const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars');
@@ -20,12 +22,27 @@ const flash = require('connect-flash');
 
 const session = require('express-session');
 //const session = require('cookie-session'); No funciono
-const MongoStore = require('connect-mongo')(session);
+//const MongoStore = require('connect-mongo')(session); No funciono
+var MongoDBStore = require('connect-mongodb-session')(session);
 
 const passport = require('passport');
+const { Store } = require('express-session');
 
 // ---------------------Initializations:
 const app = express();
+var store = new MongoDBStore({
+    uri: process.env.MONGODB_URI,
+    collection: 'mySessions'
+  });
+
+// Catch errors
+store.on('error', function(error) {
+    console.log(error);
+  });
+
+
+
+
 require('./config/passport');
 
 // ---------------------Settings:
@@ -46,9 +63,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'secret',
-    //resave: true,
-    //saveUninitialized: true
-    store: new MongoStore()
+    store: store,
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
