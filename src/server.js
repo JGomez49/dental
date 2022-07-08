@@ -19,7 +19,8 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 
 const session = require('express-session');
-//const session = require('cookie-session');
+//const session = require('cookie-session'); No funciono
+const MongoStore = require('connect-mongo')(session);
 
 const passport = require('passport');
 
@@ -45,8 +46,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+    //resave: true,
+    //saveUninitialized: true
+    store: new MongoStore()
 }));
 app.use(passport.initialize());
 app.use(passport.session());
