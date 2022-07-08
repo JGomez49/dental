@@ -17,7 +17,11 @@ const { request } = require('http');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
-const session = require('express-session');
+
+//const session = require('express-session');
+// require('cookie-session');
+
+const session = require('cookie-session');
 const passport = require('passport');
 
 // ---------------------Initializations:
