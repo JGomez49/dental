@@ -18,7 +18,7 @@ const {isAuthenticated} = require('../helpers/auth');
 router.get('/notespet/add', isAuthenticated, renderNotePetForm);
 
 //New note Pet
-router.post('/notespet/new-notePet', isAuthenticated, createNewNotePet);
+router.post('/notespet/new-notepet', isAuthenticated, createNewNotePet);
 
 //Get all notes Pet
 router.get('/notespet', isAuthenticated, renderNotesPet);

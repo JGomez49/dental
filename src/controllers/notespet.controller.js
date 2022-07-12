@@ -67,7 +67,7 @@ notesPetCrtl.createNewNotePet = async(req,res)=>{
     req.flash('success_msg','Note added successfully');
     console.log('>> From createNewNotePet, newNotePet:')
     console.log(newNotePet);
-    res.redirect('/notesPet');
+    res.redirect('/notespet');
 }
 
 notesPetCrtl.renderNotesPet = async (req,res)=>{
