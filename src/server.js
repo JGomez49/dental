@@ -25,16 +25,10 @@ const session = require('express-session');
 //const MongoStore = require('connect-mongo')(session); No funciono
 var MongoDBStore = require('connect-mongodb-session')(session);
 
-const passport = require('passport');
-const { Store } = require('express-session');
-
-// ---------------------Initializations:
-const app = express();
 var store = new MongoDBStore({
     uri: process.env.MONGODB_URI,
     collection: 'mySessions'
   });
-
 // Catch errors
 store.on('error', function(error) {
     console.log(error);
@@ -42,6 +36,15 @@ store.on('error', function(error) {
 
 
 
+const passport = require('passport');
+const { Store } = require('express-session');
+
+
+
+
+
+// ---------------------Initializations:
+const app = express();
 
 require('./config/passport');
 
@@ -61,12 +64,31 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
-app.use(session({
+
+// ------------------------------------------
+// app.use(session({
+//     secret: 'secret',
+//     store: store,
+//     resave: true,
+//     saveUninitialized: true
+// }));
+
+// ....................................
+app.use(require('express-session')({
     secret: 'secret',
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+    },
     store: store,
+    // Boilerplate options, see:
+    // * https://www.npmjs.com/package/express-session#resave
+    // * https://www.npmjs.com/package/express-session#saveuninitialized
     resave: true,
     saveUninitialized: true
-}));
+  }));
+// =========================================
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
