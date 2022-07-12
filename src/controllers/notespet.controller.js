@@ -75,7 +75,7 @@ notesPetCrtl.renderNotesPet = async (req,res)=>{
     const notesPet = await NotePet.find({
         user: req.user.id
     }).sort({title: 'asc'});
-    res.render('notesPet/all-notesPet', {notesPet});
+    res.render('notespet/all-notespet', {notesPet});
 };
 
 
