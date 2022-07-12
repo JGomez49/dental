@@ -54,7 +54,7 @@ usersCtrl.signup = async (req, res) => {
 // --------------------------------------Sing In----------------------------
 
 usersCtrl.renderSigninForm = (req, res) => {
-    res.render('/users/signin');
+    res.render('users/signin');
 };
 
 
