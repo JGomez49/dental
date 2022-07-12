@@ -17,7 +17,7 @@ cloudinary.config({
 notesPetCrtl.renderNotePetForm = (req,res)=>{
     // res.send('Add a note...');
     console.log('user_id: ' + req.user.id);
-    res.render('notespet/new-notePet');
+    res.render('notespet/new-notepet');
 }
 
 notesPetCrtl.createNewNotePet = async(req,res)=>{
